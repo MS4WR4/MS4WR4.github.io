@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yassine Msaoura (MS4WR4) — Cybersecurity Engineering student at Polytechnique Sousse. CTF player & challenge author with team 0TR4C3, main organizer of Click2Trace CTF." />
+  <title>Yassine Msaoura · MS4WR4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#top" class="logo">MS4WR4<span class="blink">_</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#competitions">competitions</a></li>
+      <li><a href="#events">events</a></li>
+      <li><a href="#htb">htb</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#education">education</a></li>
+      <li><a href="#contact" class="nav-cta">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-photo reveal">
+      <div class="photo-frame">
+        <img src="assets/profile.jpg" alt="Yassine Msaoura at a CTF" />
+        <span class="corner tl"></span><span class="corner tr"></span>
+        <span class="corner bl"></span><span class="corner br"></span>
+        <span class="scan"></span>
+        <span class="photo-tag">REC ● MS4WR4</span>
+      </div>
+    </div>
+
+    <div class="hero-text reveal">
+      <p class="eyebrow">// cybersecurity engineering student · polytechnique sousse</p>
+      <h1 class="glitch" data-text="YASSINE MSAOURA">YASSINE MSAOURA</h1>
+      <p class="typed-line">&gt; <span id="typed"></span><span class="caret">█</span></p>
+      <p class="lead">
+        CTF player and challenge author with team <b>0TR4C3</b>. Main organizer of
+        <b>Click2Trace CTF</b>, where I wrote 36 challenges for 66 teams. Focused on
+        DFIR, mobile security, reverse engineering, crypto and threat intelligence.
+      </p>
+      <p class="status"><span class="status-dot"></span>Open to new opportunities · Sousse, Tunisie / remote</p>
+      <div class="cta-row">
+        <a href="#competitions" class="btn btn-primary">view achievements</a>
+        <a href="#contact" class="btn btn-ghost">get in touch</a>
+      </div>
+      <ul class="socials">
+        <li><a href="https://www.linkedin.com/in/yassine-msaoura-803566351/" target="_blank" rel="noopener">linkedin ↗</a></li>
+        <li><a href="https://profile.hackthebox.com/profile/019d89ac-f08b-728e-8f57-9774a509e934" target="_blank" rel="noopener">hackthebox ↗</a></li>
+        <li><a href="mailto:yassinemsawra30@gmail.com">email ↗</a></li>
+      </ul>
+    </div>
+    <a href="#stats" class="scroll-hint" aria-label="Scroll down">scroll ↓</a>
+  </header>
+
+  <main>
+    <!-- STATS -->
+    <section id="stats" class="wrap stats reveal">
+      <div class="stat"><span class="num" data-count="2">0</span><span class="lbl">1st-place finishes</span></div>
+      <div class="stat"><span class="num" data-count="36">0</span><span class="lbl">challenges authored</span></div>
+      <div class="stat"><span class="num" data-count="66">0</span><span class="lbl">teams hosted</span></div>
+      <div class="stat"><span class="num" data-count="22919">0</span><span class="lbl">best personal score</span></div>
+    </section>
+
+    <!-- COMPETITIONS -->
+    <section id="competitions" class="wrap section">
+      <div class="sec-head reveal">
+        <span class="sec-num">01</span>
+        <div>
+          <h2>Competitions</h2>
+          <p class="sec-sub">$ ./pwned --list</p>
+        </div>
+      </div>
+
+      <div class="filters reveal" role="tablist">
+        <button class="filter active" data-filter="all">all</button>
+        <button class="filter" data-filter="podium">podium</button>
+        <button class="filter" data-filter="top10">top 10</button>
+      </div>
+
+      <div class="comp-grid">
+        <article class="comp gold reveal" data-tags="podium top10">
+          <div class="medal">#1</div>
+          <h3>Code And Capture CTF</h3>
+          <p class="meta">No-AI CTF · team 0TR4C3</p>
+          <p class="pts"><b>7,720</b> team pts</p>
+        </article>
+        <article class="comp gold reveal" data-tags="podium top10">
+          <div class="medal">#1</div>
+          <h3>HackArena Hackathon</h3>
+          <p class="meta">EPI Sup · team 0TR4C3</p>
+          <p class="pts"><b>6,230</b> team pts</p>
+        </article>
+        <article class="comp silver reveal" data-tags="podium top10">
+          <div class="medal">#2</div>
+          <h3>INFERNO CTF V2</h3>
+          <p class="meta">team 0TR4C3</p>
+          <p class="pts"><b>13,803</b> team · <b>7,459</b> mine</p>
+        </article>
+        <article class="comp clear reveal" data-tags="">
+          <div class="medal">187/187</div>
+          <h3>Securinets CTF Friendly 2026</h3>
+          <p class="meta">All challenges solved · 9 categories · full clear of Mobile &amp; Forensics</p>
+          <p class="pts"><b>45,804</b> team · <b>22,919</b> mine</p>
+        </article>
+        <article class="comp reveal" data-tags="top10">
+          <div class="medal">#4</div>
+          <h3>HackToTheFuture 2.0</h3>
+          <p class="meta">IEEE Computer Society × Securinets EPS</p>
+          <p class="pts"><b>8,803</b> team · <b>3,606</b> mine</p>
+        </article>
+        <article class="comp reveal" data-tags="top10">
+          <div class="medal">#4<small>/37</small></div>
+          <h3>CyberSummit 4.0 CTF</h3>
+          <p class="meta">CyberTrace ISSATSO &amp; ESPITA · 2-player team</p>
+          <p class="pts"><b>14,534</b> team pts</p>
+        </article>
+        <article class="comp reveal" data-tags="top10">
+          <div class="medal">#9<small>/~123</small></div>
+          <h3>Pioneers25 CTF</h3>
+          <p class="meta">team 0TR4C3</p>
+          <p class="pts"><b>15,080</b> team · <b>4,115</b> mine</p>
+        </article>
+        <article class="comp reveal" data-tags="">
+          <div class="medal">HTB</div>
+          <h3>HTB University CTF 2025</h3>
+          <p class="meta">Dec 2025 · team 0TR4C3</p>
+          <p class="pts">Tinsel Trouble</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="wrap section">
+      <div class="sec-head reveal">
+        <span class="sec-num">02</span>
+        <div>
+          <h2>Events I built</h2>
+          <p class="sec-sub">$ ./organize --event</p>
+        </div>
+      </div>
+
+      <article class="feature reveal">
+        <div class="feature-top">
+          <div>
+            <span class="pill">main organizer · challenge author</span>
+            <h3>Click2Trace CTF 2026</h3>
+            <p class="meta">0TR4C3 × 0_clicks · online · 12 hours · 11 → 12 July 2026</p>
+          </div>
+          <div class="feature-nums">
+            <div><b>36</b><span>challenges</span></div>
+            <div><b>66</b><span>teams</span></div>
+            <div><b>3</b><span>months of work</span></div>
+          </div>
+        </div>
+        <p>I designed and built every part of my challenges: storylines, solve paths, artifacts,
+          decoys, and testing for unintended solutions.</p>
+
+        <div class="cats">
+          <details open>
+            <summary>forensics <span>7</span></summary>
+            <p>TLS After Death · Tiiiii Winikkk · Broken Filesystem · Cold Handle · MFT Time Machine · Sayeb Lcache Ye Koussay · Kadhebinn</p>
+          </details>
+          <details>
+            <summary>threat intelligence <span>10</span></summary>
+            <p>Tactical Fingerprint · Phantom Ledger · Dead Drop Resolver · Shared Certificate · Operation Black Ember · Compromise Timeline · Shadow Constellation · Dormant Beacon · Dependency Mirage · Broken Constellation</p>
+          </details>
+          <details>
+            <summary>steganography <span>7</span></summary>
+            <p>TWINS · Bloom Without Rows · Cartographers · Decemfold · Nocturne Maze · Choufli Hall · B3d Noss Lil</p>
+          </details>
+          <details>
+            <summary>pwn <span>4</span></summary>
+            <p>ret2libc leak · Oracle is Funny · Tcache Notes · Bliiind</p>
+          </details>
+          <details>
+            <summary>reverse engineering <span>1</span></summary>
+            <p><b class="red">NANDOS</b>, one of the challenges I'm most proud of.</p>
+          </details>
+          <details>
+            <summary>MS4WR4's Vacation <span>7</span></summary>
+            <p>A comedy series of 5 cryptography and 2 reverse engineering challenges.</p>
+          </details>
+        </div>
+        <p class="meta podium">🥇 roots · 🥈 PixelPioneers25 · 🥉 D6ath E9ters</p>
+      </article>
+
+      <article class="feature soon reveal">
+        <span class="pill pulse">coming soon</span>
+        <h3>Click2Trace 2.0</h3>
+        <p>A new edition set in a cyber-detective world, where players follow traces, analyze
+          evidence and solve technical cases to capture the flag. Organized by 0TR4C3.</p>
+      </article>
+    </section>
+
+    <!-- HTB -->
+    <section id="htb" class="wrap section">
+      <div class="sec-head reveal">
+        <span class="sec-num">03</span>
+        <div>
+          <h2>Hack The Box</h2>
+          <p class="sec-sub">$ htb --profile ms4wr4</p>
+        </div>
+      </div>
+      <div class="bento">
+        <div class="tile tile-rank reveal">
+          <span class="tile-lbl">rank</span>
+          <b class="big">Hacker</b>
+          <a href="https://profile.hackthebox.com/profile/019d89ac-f08b-728e-8f57-9774a509e934" target="_blank" rel="noopener" class="link">open profile ↗</a>
+        </div>
+        <div class="tile reveal">
+          <span class="tile-lbl">sherlock</span>
+          <h3>LogForge</h3>
+          <p>Windows DFIR: reconstructing an intrusion chain from event logs, browser history, PowerShell and persistence artifacts.</p>
+        </div>
+        <div class="tile reveal">
+          <span class="tile-lbl">sherlock</span>
+          <h3>Holmes 2025 #2: The Watchman's Residue</h3>
+          <p>PCAP analysis, AI-chatbot prompt-injection abuse, remote-management tooling and MITRE ATT&amp;CK mapping.</p>
+        </div>
+        <div class="tile tile-wide reveal">
+          <span class="tile-lbl">owned</span>
+          <div class="chips">
+            <span>Memento</span><span>portaloo</span><span>ReplaceMe</span><span>Under the web</span><span>Funkynator</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="wrap section">
+      <div class="sec-head reveal">
+        <span class="sec-num">04</span>
+        <div>
+          <h2>Skills</h2>
+          <p class="sec-sub">$ tree ~/skills</p>
+        </div>
+      </div>
+      <div class="skill-grid">
+        <div class="skill reveal"><h3>Digital Forensics / DFIR</h3><p>Windows artifacts · event logs · filesystems / MFT · incident timelines</p></div>
+        <div class="skill reveal"><h3>Network</h3><p>PCAP analysis · Wireshark · tshark · HTTP stream reconstruction</p></div>
+        <div class="skill reveal"><h3>Mobile Security</h3><p>Android application security · full category clear at Securinets Friendly 2026</p></div>
+        <div class="skill reveal"><h3>Reverse Engineering</h3><p>Binaries · application behaviour · author of NANDOS</p></div>
+        <div class="skill reveal"><h3>Cryptography</h3><p>CTF cryptography · author of the MS4WR4's Vacation series</p></div>
+        <div class="skill reveal"><h3>Threat Intelligence</h3><p>Attacker timelines · MITRE ATT&amp;CK · persistence · 10 challenges authored</p></div>
+        <div class="skill reveal"><h3>Steganography</h3><p>Challenge author · 7 challenges at Click2Trace</p></div>
+        <div class="skill reveal"><h3>Pwn</h3><p>ret2libc · tcache · oracle-style exploitation</p></div>
+        <div class="skill reveal"><h3>AI &amp; IoT</h3><p>IoT systems · AI · web development (bachelor's PFE)</p></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="wrap section">
+      <div class="sec-head reveal">
+        <span class="sec-num">05</span>
+        <div>
+          <h2>Education &amp; certifications</h2>
+          <p class="sec-sub">$ cat education.txt certs.txt</p>
+        </div>
+      </div>
+
+      <div class="edu-cols">
+        <ol class="timeline">
+          <li class="reveal now">
+            <span class="when">now</span>
+            <h3>Cybersecurity Engineering</h3>
+            <p class="meta">Polytechnique Sousse · in progress</p>
+          </li>
+          <li class="reveal">
+            <span class="when">2026</span>
+            <h3>Bachelor's in Computer Engineering</h3>
+            <p class="meta">ISITCOM, Hammam Sousse · graduated</p>
+            <p>Graduation project (PFE), in a pair with Aymen Bhiri: an IoT system that monitors
+              cancer patients and detects early signs of stress and depression.
+              Defended with <b class="red">mention Très Bien</b>.</p>
+          </li>
+        </ol>
+
+        <ul class="certs">
+          <li class="reveal"><span class="cert-ico">◆</span><div><b>Introduction to Generative AI with Google Cloud</b><span>Udacity · verified certificate</span></div></li>
+          <li class="reveal"><span class="cert-ico">◆</span><div><b>Digital Twins &amp; Industry 4.0</b><span>Innosphere Virtual Summit</span></div></li>
+          <li class="reveal"><span class="cert-ico">◆</span><div><b>TCF TP — French B2</b><span>Test de Connaissance du Français</span></div></li>
+          <li class="reveal"><span class="cert-ico">◆</span><div><b>Hack The Box — Hacker rank</b><span>badge</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="wrap section contact reveal">
+      <p class="eyebrow">// 06 · contact</p>
+      <h2 class="contact-title">Let's build the next CTF.</h2>
+      <p class="lead">Open to collaboration, internships, CTF teams and event partnerships.</p>
+      <div class="cta-row center">
+        <button class="btn btn-primary" id="copyEmail" data-email="yassinemsawra30@gmail.com">copy email</button>
+        <a class="btn btn-ghost" href="mailto:yassinemsawra30@gmail.com">send a mail ↗</a>
+      </div>
+      <p class="email-line">yassinemsawra30@gmail.com</p>
+      <ul class="socials center">
+        <li><a href="https://www.linkedin.com/in/yassine-msaoura-803566351/" target="_blank" rel="noopener">linkedin ↗</a></li>
+        <li><a href="https://profile.hackthebox.com/profile/019d89ac-f08b-728e-8f57-9774a509e934" target="_blank" rel="noopener">hackthebox ↗</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>&gt; connection closed · © <span id="year"></span> MS4WR4</span>
+    <a href="#top">back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
