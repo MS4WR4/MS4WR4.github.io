@@ -115,15 +115,15 @@ $("#year").textContent = new Date().getFullYear();
 // ---------- stat counters ----------
 (function counters() {
   const nums = $$(".stat .num");
-  const fmt = n => n.toLocaleString("en-US");
-  if (PRM || !("IntersectionObserver" in window)) { nums.forEach(n => n.textContent = fmt(+n.dataset.count)); return; }
+  const fmt = (n, el) => n.toLocaleString("en-US") + (el.dataset.suffix || "");
+  if (PRM || !("IntersectionObserver" in window)) { nums.forEach(n => n.textContent = fmt(+n.dataset.count, n)); return; }
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
       const el = e.target, target = +el.dataset.count, t0 = performance.now();
       (function frame(t) {
         const p = Math.min((t - t0) / 1600, 1);
-        el.textContent = fmt(Math.round(target * (1 - Math.pow(1 - p, 3))));
+        el.textContent = fmt(Math.round(target * (1 - Math.pow(1 - p, 3))), el);
         if (p < 1) requestAnimationFrame(frame);
       })(t0);
       io.unobserve(el);
